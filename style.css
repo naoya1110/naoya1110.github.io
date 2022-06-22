@@ -1,0 +1,28 @@
+
+
+h1{
+    color:darkslateblue;
+    font-family: Georgia, serif;
+    font-size: 2.5rem
+}
+
+h2{
+    color:darkslateblue;
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    line-height: 0.5;
+}
+
+h3{
+    color:darkslateblue;
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    line-height: 0.5;
+}
+
+p {
+    color:darkslateblue;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    line-height: 0.5;
+}
