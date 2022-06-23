@@ -1,16 +1,20 @@
-var now = new Date();
-
-function ShowClock(){
-    var target = document.getElementById("DateTimeDisp");
-
-    var Year = now.getFullYear();
-    var Month = now.getMonth()+1;
-    var Date = now.getDate();
-    var Hour = now.getHours();
-    var Min = now.getMinutes();
-    var Sec = now.getSeconds();
-    var Day = now.getDay();
-    var DayOfWeekStr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][Day];
-    target.innerHTML = Year + "." + Month + ". " + Date + " " + DayOfWeekStr + " "+ Hour+":"+Min+":"+Sec
-}
-setInterval('ShowClock()',1000);
+function twoDigit(num) {
+    let ret;
+    if( num < 10 ) 
+      ret = "0" + num; 
+    else 
+      ret = num; 
+    return ret;
+  }
+  function showClock() {
+    let nowTime = new Date();
+    let nowYear = nowTime.getFullYear();
+    let nowMonth = twoDigit( nowTime.getMonth()+1 );
+    let nowDate = twoDigit( nowTime.getDate() );
+    let nowHour = twoDigit( nowTime.getHours() );
+    let nowMin  = twoDigit( nowTime.getMinutes() );
+    let nowSec  = twoDigit( nowTime.getSeconds() );
+    let msg = nowYear +"."+ nowMonth +"."+  nowDate + " "+  nowHour + ":" + nowMin + ":" + nowSec;
+    document.getElementById("realtime").innerHTML = msg;
+  }
+  setInterval('showClock()',1000);
