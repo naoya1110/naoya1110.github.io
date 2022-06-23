@@ -14,7 +14,7 @@ function twoDigit(num) {
     let nowHour = twoDigit( nowTime.getHours() );
     let nowMin  = twoDigit( nowTime.getMinutes() );
     let nowSec  = twoDigit( nowTime.getSeconds() );
-    let msg = nowYear +"."+ nowMonth +"."+  nowDate + " "+  nowHour + ":" + nowMin + ":" + nowSec;
+    let msg = " " + nowYear +"."+ nowMonth +"."+  nowDate + " "+  nowHour + ":" + nowMin + ":" + nowSec;
     document.getElementById("realtime").innerHTML = msg;
   }
   setInterval('showClock()',1000);
