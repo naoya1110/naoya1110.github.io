@@ -21,6 +21,11 @@ function date_and_time(){
   return ret;
 }
 
+async function scanCamera(){
+  const devices = await (navigator.mediaDevices.enumerateDevices());
+  console.log(devices)
+}
+
 async function loadAndPlay() {
   const video = document.getElementById('myVideo');
   stream = await getDeviceStream({
@@ -37,7 +42,8 @@ function stop() {
   canvas.getContext('2d').clearRect(0, 0, 320, 320)
 }
 
-function capture(){
+
+function capture(filename){
   const video = document.getElementById('myVideo');
   const canvas = document.getElementById('myCanvas');
   canvas.width = video.videoWidth;
@@ -46,9 +52,22 @@ function capture(){
 
   const link = document.createElement("a");
   link.href = canvas.toDataURL("image/jpeg");
-  link.download = date_and_time()+"_xxx.jpg";
+  link.download = filename
   link.click();
 }
+
+function capture_0(){
+  capture("label_0_" + date_and_time()+ "_.jpg");
+}
+
+function capture_1(){
+  capture("label_1_" + date_and_time()+ "_.jpg");
+}
+
+function capture_2(){
+  capture("label_2_" + date_and_time()+ "_.jpg");
+}
+
 
 function getDeviceStream(option) {
   if ('getUserMedia' in navigator.mediaDevices) {
