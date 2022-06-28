@@ -59,21 +59,16 @@ function addOption() {
 async function createWebcamSelect() {
   let devices = await scanCamera2();
   console.log("test")
-  console.log(devices.length);
   n = await devices.length;
+  console.log("number of camera: " + n)
   for (i=0; i<n; i++){
-    // selectタグを取得する
-    let select = document.getElementById("sampleSelect");
-    // optionタグを作成する
+    let select = document.getElementById("cameraSelect");
     let option = document.createElement("option");
-    // optionタグのテキストを4に設定する
-
-    option.text = devices[i].label;
-    option.value = devices[i].deviceId;
+    option.text = i + devices[i].label;
+    option.value = i + devices[i].deviceId;
     select.appendChild(option);
     console.log(option);
   }
-
 }
 
 
