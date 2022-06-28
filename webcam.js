@@ -23,9 +23,42 @@ function date_and_time(){
 
 async function scanCamera(){
   const devices = (await navigator.mediaDevices.enumerateDevices())
-    .filter((device) => device.kind === 'videoinput');
+  .filter((device) => device.kind === 'videoinput')
+  .map((device) => {
+    return {
+      text: device.label,
+      value: device.deviceId,
+    };
+  });
   console.log(devices)
 }
+
+function addOption() {
+  // selectタグを取得する
+  var select = document.getElementById("sampleSelect");
+  // optionタグを作成する
+  var option = document.createElement("option");
+  // optionタグのテキストを4に設定する
+  option.text = 4;
+  // optionタグのvalueを4に設定する
+  option.value = 4;
+  // selectタグの子要素にoptionタグを追加する
+  select.appendChild(option);
+ }
+
+ function createWebcamSelect() {
+  // selectタグを取得する
+  webcam_list = scanCamera()
+  var select = document.getElementById("sampleSelect");
+  // optionタグを作成する
+  var option = document.createElement("option");
+  // optionタグのテキストを4に設定する
+  option.text = 4;
+  // optionタグのvalueを4に設定する
+  option.value = 4;
+  // selectタグの子要素にoptionタグを追加する
+  select.appendChild(option);
+ }
 
 async function loadAndPlay() {
   const video = document.getElementById('myVideo');
