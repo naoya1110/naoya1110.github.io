@@ -46,19 +46,22 @@ function addOption() {
   select.appendChild(option);
  }
 
- function createWebcamSelect() {
+function createWebcamSelect() {
   // selectタグを取得する
-  webcam_list = scanCamera()
-  var select = document.getElementById("sampleSelect");
-  // optionタグを作成する
-  var option = document.createElement("option");
-  // optionタグのテキストを4に設定する
-  option.text = 4;
-  // optionタグのvalueを4に設定する
-  option.value = 4;
-  // selectタグの子要素にoptionタグを追加する
-  select.appendChild(option);
- }
+  webcamList = scanCamera();
+  for (let i=0; i>webcamList.length, i++){
+    var select = document.getElementById("sampleSelect");
+    // optionタグを作成する
+    var option = document.createElement("option");
+    // optionタグのテキストを4に設定する
+    option.text = webcamList.text[i];
+    // optionタグのvalueを4に設定する
+    option.value = webcamList.value[i];
+    // selectタグの子要素にoptionタグを追加する
+    select.appendChild(option);
+
+  }
+}
 
 async function loadAndPlay() {
   const video = document.getElementById('myVideo');
