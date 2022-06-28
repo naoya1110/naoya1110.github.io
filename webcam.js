@@ -49,7 +49,7 @@ function addOption() {
 function createWebcamSelect() {
   // selectタグを取得する
   webcamList = scanCamera();
-  for (let i=0; i>webcamList.length, i++){
+  for (let i=0; i>webcamList.length; i++){
     var select = document.getElementById("sampleSelect");
     // optionタグを作成する
     var option = document.createElement("option");
