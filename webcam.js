@@ -49,21 +49,19 @@ function addOption() {
 
 function createWebcamSelect() {
   webcamList = scanCamera();
-  console.log(webcamList.length);
+  console.log(webcamList);
   for (i=0; i<5; i++){
-  // selectタグを取得する
-  let select = document.getElementById("sampleSelect");
-  // optionタグを作成する
-  let option = document.createElement("option");
-  // optionタグのテキストを4に設定する
+    // selectタグを取得する
+    let select = document.getElementById("sampleSelect");
+    // optionタグを作成する
+    let option = document.createElement("option");
+    // optionタグのテキストを4に設定する
 
-  option.text = webcamList[i];
-  // optionタグのvalueを4に設定する
-  option.value = webcamList[i];
-  // selectタグの子要素にoptionタグを追加する
-  select.appendChild(option);
-  console.log("aaa");
-}
+    option.text = webcamList[i].text;
+    option.value = webcamList[i].text;
+    select.appendChild(option);
+    console.log("aaa");
+  }
 
 }
 
