@@ -58,9 +58,9 @@ function createWebcamSelect() {
     // optionタグのテキストを4に設定する
 
     option.text = webcamList[i].text;
-    option.value = webcamList[i].text;
+    option.value = webcamList[i].value;
     select.appendChild(option);
-    console.log("aaa");
+    console.log(webcamList[i]);
   }
 
 }
