@@ -31,6 +31,15 @@ async function scanCamera(){
     };
   });
   console.log(devices);
+  console.log(devices.length)
+}
+
+async function scanCamera2(){
+  const devices = (await navigator.mediaDevices.enumerateDevices())
+  .filter((device) => device.kind === 'videoinput')
+  console.log(devices);
+  console.log(devices.length);
+  return devices;
 }
 
 
@@ -47,20 +56,22 @@ function addOption() {
   select.appendChild(option);
  }
 
-function createWebcamSelect() {
-  webcamList = scanCamera();
-  console.log(webcamList);
-  for (i=0; i<5; i++){
+async function createWebcamSelect() {
+  let devices = await scanCamera2();
+  console.log("test")
+  console.log(devices.length);
+  n = await devices.length;
+  for (i=0; i<n; i++){
     // selectタグを取得する
     let select = document.getElementById("sampleSelect");
     // optionタグを作成する
     let option = document.createElement("option");
     // optionタグのテキストを4に設定する
 
-    option.text = webcamList[i].text;
-    option.value = webcamList[i].value;
+    option.text = devices[i].label;
+    option.value = devices[i].deviceId;
     select.appendChild(option);
-    console.log(webcamList[i]);
+    console.log(option);
   }
 
 }
