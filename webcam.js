@@ -22,7 +22,8 @@ function date_and_time(){
 }
 
 async function scanCamera(){
-  const devices = await (navigator.mediaDevices.enumerateDevices());
+  const devices = (await navigator.mediaDevices.enumerateDevices())
+    .filter((device) => device.kind === 'videoinput');
   console.log(devices)
 }
 
