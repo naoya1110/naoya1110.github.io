@@ -84,7 +84,7 @@ function getDeviceStream(option) {
 
 async function loadAndPlay() {
   const selectedDeviceId = await document.getElementById("cameraSelect").value;
-  console.log("selectedDeviceId:", selectedDeviceId)
+  console.log("selectedDeviceId:"+ selectedDeviceId)
   const video = document.getElementById('myVideo');
   stream = await getDeviceStream({
     video: { width: 320, height: 320, deviceId:selectedDeviceId }, audio: false});
