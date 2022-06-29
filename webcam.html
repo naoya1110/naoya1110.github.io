@@ -8,15 +8,15 @@
     </head>
 
     <body onload="createWebcamSelect()">
-        <button onclick="createWebcamSelect()">Scan Camera</button>
+        <!--- <button onclick="createWebcamSelect()">Scan Camera</button> --->
         <select name="cameraSelect" id="cameraSelect">
             <option value="0">select camera</option>
         </select>
         <button onclick="loadAndPlay()">Play</button>
+        <button onclick="stop()">Stop</button><br>
         <button onclick="capture_0()">Label 0</button>
         <button onclick="capture_1()">Label 1</button>
         <button onclick="capture_2()">Label 2</button>
-        <button onclick="stop()">Stop</button><br>
 
         <video id="myVideo" width="320" height="320" autoplay></video>
         <canvas id="myCanvas" width="320" height="320"></canvas>
