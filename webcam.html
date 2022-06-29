@@ -7,7 +7,7 @@
         <script src="webcam.js" defer></script>
     </head>
 
-    <body>
+    <body onload="createWebcamSelect()">
         <button onclick="createWebcamSelect()">Scan Camera</button>
         <select name="cameraSelect" id="cameraSelect">
             <option value="0">select camera</option>
