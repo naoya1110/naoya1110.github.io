@@ -88,7 +88,7 @@ async function loadAndPlay() {
   const video = document.getElementById('myVideo');
   stream = await getDeviceStream({
     video: true,
-    video: {deviceId:1, width: 320, height: 320,},
+    video: {deviceId:selectedDeviceId, width: 320, height: 320,},
     audio: false
   });
 
