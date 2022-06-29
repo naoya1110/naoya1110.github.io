@@ -65,7 +65,7 @@ async function createWebcamSelect() {
     let select = document.getElementById("cameraSelect");
     let option = document.createElement("option");
     option.text = i + ": "+ devices[i].label;
-    option.value = i + devices[i].deviceId;
+    option.value = devices[i].deviceId;
     select.appendChild(option);
     console.log(option);
   }
