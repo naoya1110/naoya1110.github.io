@@ -43,19 +43,6 @@ async function scanCamera2(){
 }
 
 
-function addOption() {
-  // selectタグを取得する
-  var select = document.getElementById("sampleSelect");
-  // optionタグを作成する
-  var option = document.createElement("option");
-  // optionタグのテキストを4に設定する
-  option.text = 4;
-  // optionタグのvalueを4に設定する
-  option.value = 4;
-  // selectタグの子要素にoptionタグを追加する
-  select.appendChild(option);
- }
-
 async function createWebcamSelect() {
   let devices = await scanCamera2();
   console.log("test")
@@ -87,8 +74,9 @@ async function loadAndPlay() {
   console.log("selectedDeviceId:"+ selectedDeviceId)
   const video = document.getElementById('myVideo');
   stream = await getDeviceStream({
-    video: true,
-    video: {deviceId:selectedDeviceId, width: 320, height: 320,},
+    //video: true,
+    video: {deviceId:selectedDeviceId},
+    //video: {width: 320, height: 320,},
     audio: false
   });
 
