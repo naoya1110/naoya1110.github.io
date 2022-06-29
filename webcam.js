@@ -72,10 +72,21 @@ async function createWebcamSelect() {
 }
 
 
+function getDeviceStream(option) {
+  if ('getUserMedia' in navigator.mediaDevices) {
+    return navigator.mediaDevices.getUserMedia(option);
+  } else {
+    return new Promise(function(resolve, reject) {
+      navigator.getUserMedia(option, resolve, reject);
+    });
+  }
+}
+
 async function loadAndPlay() {
+  const selectedDeviceId = document.getElementById("cameraSelect").value;
   const video = document.getElementById('myVideo');
   stream = await getDeviceStream({
-    video: { width: 320, height: 320 }, audio: false});
+    video: { width: 320, height: 320, deviceId:selectedDeviceId }, audio: false});
   video.srcObject = stream;
 }
 
@@ -115,12 +126,4 @@ function capture_2(){
 }
 
 
-function getDeviceStream(option) {
-  if ('getUserMedia' in navigator.mediaDevices) {
-    return navigator.mediaDevices.getUserMedia(option);
-  } else {
-    return new Promise(function(resolve, reject) {
-      navigator.getUserMedia(option, resolve, reject);
-    });
-  }
-}
+
