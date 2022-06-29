@@ -8,6 +8,7 @@
     </head>
 
     <body onload="createWebcamSelect()">
+        <div class="realtime" id="realtime"></div>
         <!--- <button onclick="createWebcamSelect()">Scan Camera</button> --->
         <select name="cameraSelect" id="cameraSelect">
             <option value="0">select camera</option>
@@ -16,7 +17,7 @@
         <button onclick="stop()">Stop</button>
         <button onclick="capture_0()">Label 0</button>
         <button onclick="capture_1()">Label 1</button>
-        <button onclick="capture_2()">Label 2</button><br>
+        <button onclick="capture_2()">Label 2</button><br><br>
 
         <video id="myVideo" width="320" height="320" autoplay></video>
         <canvas id="myCanvas" width="320" height="320"></canvas>
