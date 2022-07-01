@@ -1,4 +1,7 @@
-navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+function getGeoLocation(){
+    navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+}
+
 
 function geoSuccess(position){
     const lat = position.coords.latitude;
@@ -6,9 +9,13 @@ function geoSuccess(position){
     const accuracy = Math.floor(position.coords.accuracy);
     console.log("lat", lat)
     console.log("lng", lng)
+    document.getElementById("lat").innerHTML = lat;
+    document.getElementById("lng").innerHTML = lng;
 }
 
 function geoError(){
     alert("Geolocation Error")
 }
 
+getGeoLocation()
+// setInterval('getGeoLocation()',1000);
