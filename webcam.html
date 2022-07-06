@@ -12,13 +12,24 @@
         <div class="realtime" id="realtime"></div>
         <!--- <button onclick="createWebcamSelect()">Scan Camera</button> --->
         <select name="cameraSelect" id="cameraSelect">
-            <!---<option value="0">select camera</option>--->
+            <option value="0">select camera</option>
         </select>
         <button onclick="loadAndPlay()">Play</button>
-        <button onclick="stop()">Stop</button>
-        <button onclick="capture_0()">Label 0</button>
-        <button onclick="capture_1()">Label 1</button>
-        <button onclick="capture_2()">Label 2</button><br><br>
+        <select name="labelSelect" id="labelSelect">
+            <option value="-1">Select Label</option>
+            <option value="0">Label 0</option>
+            <option value="1">Label 1</option>
+            <option value="2">Label 2</option>
+            <option value="3">Label 3</option>
+            <option value="4">Label 4</option>
+            <option value="5">Label 5</option>
+            <option value="6">Label 6</option>
+            <option value="7">Label 7</option>
+            <option value="8">Label 8</option>
+            <option value="9">Label 9</option>
+        </select>
+        <button onclick="capture()">Capture</button>
+        <button onclick="stop()">Stop</button><br><br>
 
         <video id="myVideo" width="320" height="320" autoplay></video>
         <canvas id="myCanvas" width="320" height="320"></canvas>

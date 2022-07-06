@@ -93,7 +93,8 @@ function stop() {
 }
 
 
-function capture(filename){
+function capture(){
+  const selectedLabel = document.getElementById("labelSelect").value;
   const video = document.getElementById('myVideo');
   const canvas = document.getElementById('myCanvas');
   canvas.width = video.videoWidth;
@@ -102,21 +103,11 @@ function capture(filename){
 
   const link = document.createElement("a");
   link.href = canvas.toDataURL("image/jpeg");
-  link.download = filename
+  link.download = "label_"+selectedLabel+"_"+date_and_time()+ "_.jpg";
   link.click();
 }
 
-function capture_0(){
-  capture("label_0_" + date_and_time()+ "_.jpg");
-}
 
-function capture_1(){
-  capture("label_1_" + date_and_time()+ "_.jpg");
-}
-
-function capture_2(){
-  capture("label_2_" + date_and_time()+ "_.jpg");
-}
 
 
 
