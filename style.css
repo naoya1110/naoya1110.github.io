@@ -56,3 +56,17 @@ button{
     line-height: 0.5;
     height:20pt;
     }
+
+.viewer_area{
+    display:flex;
+    background-color:azure;
+    width: 700px;
+}
+
+.viewer_area .item{
+    margin:10pt;
+}
+
+.viewer_area .item .caption{
+    text-align: center;
+}
