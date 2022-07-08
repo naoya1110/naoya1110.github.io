@@ -79,6 +79,7 @@ function getDeviceStream(option) {
   }
 }
 
+
 async function loadAndPlay() {
   const selectedDeviceId = await document.getElementById("cameraSelect").value;
   console.log("selectedDeviceId:"+ selectedDeviceId)
@@ -90,7 +91,16 @@ async function loadAndPlay() {
     audio: false
   });
 
+
+  
   video.srcObject = stream;
+}
+
+flip_mode = 1;
+function flip() {
+  const video = document.getElementById('myVideo');
+  flip_mode = flip_mode*(-1);
+  video.style.transform="scaleX(" + flip_mode + ")"; //horizontal flip
 }
 
 function stop() {

@@ -16,9 +16,10 @@
                 <option value="0">select camera</option>
             </select>
             <button onclick="loadAndPlay()">Play</button>
+            <button onclick="flip()">Flip</button>
             <button onclick="stop()">Stop</button>
             <select name="labelSelect" id="labelSelect">
-                <option value="-1">Select Label</option>
+                <option value="nan">Select Label</option>
                 <option value="0">Label 0</option>
                 <option value="1">Label 1</option>
                 <option value="2">Label 2</option>
@@ -34,7 +35,7 @@
         </div>
         <div class="viewer_area">
             <div class="item">
-                <div class="caption">Realtime Image</div>
+                <div class="caption">Camera Stream</div>
                 <video id="myVideo" width="320" height="320" autoplay></video>
             </div>
             <div class="item">
