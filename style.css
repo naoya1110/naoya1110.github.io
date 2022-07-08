@@ -70,3 +70,10 @@ button{
 .viewer_area .item .caption{
     text-align: center;
 }
+
+/*
+video {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+*/

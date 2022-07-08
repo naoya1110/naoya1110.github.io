@@ -9,6 +9,15 @@ function twoDigit(num) {
   return ret;
 }
 
+function threeDigit(num) {
+  let ret;
+  if( num < 100 ) 
+    ret = "0" + num; 
+  else 
+    ret = num; 
+  return ret;
+}
+
 function date_and_time(){
   let nowTime = new Date();
   let nowYear = nowTime.getFullYear();
@@ -17,7 +26,8 @@ function date_and_time(){
   let nowHour = twoDigit( nowTime.getHours() );
   let nowMin  = twoDigit( nowTime.getMinutes() );
   let nowSec  = twoDigit( nowTime.getSeconds() );
-  let ret = nowYear + nowMonth + nowDate + "_" + nowHour + nowMin + nowSec;
+  let nowMilliSec = threeDigit(twoDigit(nowTime.getMilliseconds()));
+  let ret = nowYear + nowMonth + nowDate + "_" + nowHour + nowMin + nowSec + "_" + nowMilliSec;
   return ret;
 }
 
@@ -106,7 +116,6 @@ function capture(){
   link.download = "label_"+selectedLabel+"_"+date_and_time()+ "_.jpg";
   link.click();
 }
-
 
 
 
