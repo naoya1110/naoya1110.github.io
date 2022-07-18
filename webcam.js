@@ -83,11 +83,11 @@ function getDeviceStream(option) {
 async function loadAndPlay() {
   const selectedDeviceId = await document.getElementById("cameraSelect").value;
   console.log("selectedDeviceId:"+ selectedDeviceId)
+  const frameSize = await document.getElementById("frameSize").value;
+  console.log("frameSize:"+ frameSize)
   const video = document.getElementById('myVideo');
   stream = await getDeviceStream({
-    //video: true,
-    video: {deviceId:selectedDeviceId, width:320, height: 320,},
-    //video: {width: 320, height: 320,},
+    video: {deviceId:selectedDeviceId, width:frameSize, height: frameSize,},
     audio: false
   });
 
@@ -117,6 +117,7 @@ function capture(){
   const selectedLabel = document.getElementById("labelSelect").value;
   const video = document.getElementById('myVideo');
   const canvas = document.getElementById('myCanvas');
+  const frameSize = await document.getElementById("frameSize").value;
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0);
@@ -125,6 +126,10 @@ function capture(){
   link.href = canvas.toDataURL("image/jpeg");
   link.download = "label_"+selectedLabel+"_"+date_and_time()+ "_.jpg";
   link.click();
+
+  // canvas.width = frameSize;
+  // canvas.height = frameSize;
+  // canvas.getContext('2d').drawImage(video, 0, 0);
 }
 
 

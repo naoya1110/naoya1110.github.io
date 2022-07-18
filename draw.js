@@ -1,3 +1,5 @@
+
+
 const stage = acgraph.create('stage');
 
 udonya_coords = {
@@ -5,6 +7,7 @@ udonya_coords = {
     1:{"x":100, "y":50},
     2:{"x":355, "y":300},
 }
+
 
 stage.rect(0,0,400,400).fill("#008000");
 
