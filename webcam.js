@@ -115,7 +115,7 @@ function capture(){
   const selectedLabel = document.getElementById("labelSelect").value;
   const video = document.getElementById('myVideo');
   const canvas = document.getElementById('myCanvas');
-  const frameSize = await document.getElementById("frameSize").value;
+  const frameSize = document.getElementById("frameSize").value;
   canvas.width = frameSize;
   canvas.height = frameSize;
   // canvas.width = video.videoWidth;
