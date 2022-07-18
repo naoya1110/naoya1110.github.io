@@ -91,8 +91,6 @@ async function loadAndPlay() {
     audio: false
   });
 
-
-  
   video.srcObject = stream;
 }
 
@@ -118,8 +116,10 @@ function capture(){
   const video = document.getElementById('myVideo');
   const canvas = document.getElementById('myCanvas');
   const frameSize = await document.getElementById("frameSize").value;
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  canvas.width = frameSize;
+  canvas.height = frameSize;
+  // canvas.width = video.videoWidth;
+  // canvas.height = video.videoHeight;
   canvas.getContext('2d').drawImage(video, 0, 0);
 
   const link = document.createElement("a");
